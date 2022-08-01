@@ -50,12 +50,11 @@ const Notes = () => {
                                     <label htmlFor="tag">Tag</label>
                                     <input type="text" className="form-control" value={note.etag} id="etag" name='etag' onChange={onChange} placeholder="Enter Tag" minLength={5} required />
                                 </div>
-                                <button style={{ marginTop: '3rem' }} type="submit" className="btn btn-primary" onClick={handleSubmit} >Add Note</button>
                             </form>
                         </div>
                         <div className="modal-footer">
                             <button ref={refClose} type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button disabled={note.etitle.length < 5 || note.eDescription.length < 5} onClick={handleSubmit} type="button" className="btn btn-primary">Update Note</button>
+                            <button  onClick={handleSubmit} type="button" className="btn btn-primary">Update Note</button>
                         </div>
                     </div>
                 </div>
