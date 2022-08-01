@@ -6,14 +6,25 @@ import { Routes, Route, BrowserRouter } from 'react-router-dom';
 import NoteState from './context/notes/NoteState';
 import Login from './Components/Login/Login';
 import Signup from './Components/Signup/Signup';
-// import Alert from './Components/Alert/Alert';
+import Alert from './Components/Alert/Alert';
+import { useState } from 'react';
 function App() {
+  const [alert, setAlert] = useState(null);
+  const showAlert = (message, type)=>{
+      setAlert({
+        msg: message,
+        type: type
+      })
+      setTimeout(() => {
+          setAlert(null);
+      }, 1500);
+  }
   return (
     <>
       <NoteState>
         <BrowserRouter>
           <Navbar />
-          {/* <Alert /> */}
+          <Alert />
           <div className="container">
             <Routes>
               <Route exact path='/' index element={<Home />} />
